@@ -328,10 +328,7 @@ public class Request {
         tmp = ByteBuffer.wrap(_content.getBytes());
         int capacity = tmp.capacity();
         /* Check if we need to compress the data */
-        if (capacity >= 8192) {
-            tmp = doCompress(tmp, capacity);
-            _flags |= FLAG_COMPRESSED;
-        }
+
         buffers[1] = tmp;
         buffers[0] = serializeHeader(capacity);
 

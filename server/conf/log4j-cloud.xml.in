@@ -85,7 +85,7 @@ under the License.
    
    <category name="org.apache.cloudstack">
      <priority value="DEBUG"/>
-   </category
+   </category>
    
    <!-- Limit the org.apache category to INFO as its DEBUG is verbose -->
    <category name="org.apache">
@@ -102,6 +102,10 @@ under the License.
 
    <category name="apiserver.com.cloud">
      <priority value="DEBUG"/>
+   </category>
+
+  <category name="com.cloud.utils.nio">
+     <priority value="TRACE"/>
    </category>
 
    <logger name="apiserver.com.cloud" additivity="false">
