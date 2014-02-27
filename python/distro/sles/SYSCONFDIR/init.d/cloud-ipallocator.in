@@ -30,10 +30,12 @@
 . /lib/lsb/init-functions
 . /etc/rc.status
 
+whatami=cloud-external-ipallocator
+
 # set environment variables
 
-SHORTNAME="$0"
-PIDFILE=@PIDDIR@/"$SHORTNAME".pid
+SHORTNAME="$whatami"
+PIDFILE=@PIDDIR@/"$whatami".pid
 LOCKFILE=@LOCKDIR@/"$SHORTNAME"
 LOGFILE=@AGENTLOG@
 PROGNAME="Cloud Agent"
@@ -108,7 +110,7 @@ case "$1" in
 	start
 	;;
   *)
-	echo $"Usage: $SHORTNAME {start|stop|restart|status|help}"
+	echo $"Usage: $whatami {start|stop|restart|status|help}"
 	RETVAL=3
 esac
 

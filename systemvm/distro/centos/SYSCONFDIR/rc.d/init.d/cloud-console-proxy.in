@@ -24,10 +24,12 @@
 
 . /etc/rc.d/init.d/functions
 
+whatami=cloud-console-proxy
+
 # set environment variables
 
-SHORTNAME="$0"
-PIDFILE=@PIDDIR@/"$SHORTNAME".pid
+SHORTNAME="$whatami"
+PIDFILE=@PIDDIR@/"$whatami".pid
 LOCKFILE=@LOCKDIR@/"$SHORTNAME"
 LOGFILE=@CPLOG@
 PROGNAME="Cloud Console Proxy"
@@ -88,7 +90,7 @@ case "$1" in
 	fi
 	;;
   *)
-	echo $"Usage: $SHORTNAME {start|stop|restart|condrestart|status|help}"
+	echo $"Usage: $whatami {start|stop|restart|condrestart|status|help}"
 	RETVAL=3
 esac
 
